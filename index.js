@@ -25,13 +25,13 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get('/api/whoami', (req, res) => {
-    const idpAddress = req.headers['x-forwarded-to'] || req.socket.remoteAddress;
+    const idpaddress = req.headers['x-forwarded-to'] || req.socket.remoteAddress;
     const language = req.headers['accept-language'];
-    const userAgent = req.headers['user-agent'];
+    const software = req.headers['user-agent'];
     res.json({
-        idpAddress,
+        idpaddress,
         language,
-        userAgent
+        software
     });
 });
 
